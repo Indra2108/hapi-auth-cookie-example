@@ -2,6 +2,7 @@
 
 const Hapi = require('@hapi/hapi')
 
+const account = require('./models')
 const plugins = require('./plugins')
 const routes = require('./routes')
 
@@ -17,14 +18,20 @@ const init = async () => {
     server.auth.strategy('session', 'cookie', {
         cookie: {
             name: 'sid-example',
-            password: 'rahasia',
+            password: '123456789012345678901234567890123456', // should be 32 character
             isSecure: false // For working via HTTP in localhost
         },
 
-        redirectTo: '/login',
+        redirectTo: '/',
 
         validateFunc: async (request, session) => {
-            // const account 
+            const user = await account.findByPk(session.id)
+
+            if (!user) {
+                return { valid: false }
+            }
+
+            return { valid: true, credentials: user }
         }
     })
     server.auth.default('session')
