@@ -1,3 +1,4 @@
+const login = require("../handler/LOGIN")
 const register = require("../handler/REGISTER")
 
 const routes = [
@@ -9,6 +10,32 @@ const routes = [
         }
     },
     {
+        method: 'POST',
+        path: '/register',
+        handler: register,
+        options: {
+            auth: false
+        }
+    },
+    {
+        method: 'POST',
+        path: '/login',
+        handler: login,
+        options: {
+            auth: {
+                mode: 'try'
+            }
+        }
+    },
+    {
+        method: 'GET',
+        path: '/logout',
+        handler: async (request, h) => {
+            await request.cookieAuth.clear()
+            return h.redirect('/')
+        },
+    },
+    {
         method: 'GET',
         path: '/{any*}',
         handler: (request, h) => {
@@ -18,14 +45,6 @@ const routes = [
             auth: false
         }
     },
-    {
-        method: 'POST',
-        path: '/register',
-        handler: register,
-        options: {
-            auth: false
-        }
-    }
 ]
 
 module.exports = routes
