@@ -1,3 +1,5 @@
+const register = require("../handler/REGISTER")
+
 const routes = [
     {
         method: 'GET',
@@ -12,6 +14,14 @@ const routes = [
         handler: (request, h) => {
             return 'Nyasar mass!!!'
         },
+        options: {
+            auth: false
+        }
+    },
+    {
+        method: 'POST',
+        path: '/register',
+        handler: register,
         options: {
             auth: false
         }
