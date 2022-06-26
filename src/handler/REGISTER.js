@@ -32,7 +32,7 @@ const register = async (request, h) => {
     } catch (err) {
         const response = h.response({
             status: 'Error',
-            message: 'Server Error'
+            message: err
         })
         response.code(500)
         return response
