@@ -10,7 +10,7 @@ const routes = [
         method: 'GET',
         path: '/{any*}',
         handler: (request, h) => {
-            return 'Nyasar mass!!!1'
+            return 'Nyasar mass!!!'
         },
         options: {
             auth: false
