@@ -14,6 +14,7 @@
   "author": "Indra2108 <Indra2108@github>",
   "license": "MIT",
   "dependencies": {
+    "@hapi/cookie": "^11.0.2",
     "@hapi/hapi": "^20.2.2"
   },
   "devDependencies": {
