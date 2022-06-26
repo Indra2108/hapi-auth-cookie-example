@@ -1,0 +1,16 @@
+{
+  "name": "authcookies",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "nodemon src/server.js"
+  },
+  "keywords": [
+    "NodeJS",
+    "HapiJS",
+    "Cookies"
+  ],
+  "author": "Indra2108 <Indra2108@github>",
+  "license": "MIT"
+}
