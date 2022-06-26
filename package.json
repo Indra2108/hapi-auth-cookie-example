@@ -12,5 +12,8 @@
     "Cookies"
   ],
   "author": "Indra2108 <Indra2108@github>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/hapi": "^20.2.2"
+  }
 }
