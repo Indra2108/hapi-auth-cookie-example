@@ -15,5 +15,8 @@
   "license": "MIT",
   "dependencies": {
     "@hapi/hapi": "^20.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
   }
 }
